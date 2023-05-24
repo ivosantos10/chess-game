@@ -26,6 +26,11 @@ public class ChessMatch {
         return mat;
     }
 
+    public boolean[][] possibleMoves(ChessPosition sourcePoistion){
+        Position position = sourcePoistion.toPosition();
+        validateSourcePosition(position);
+        return board.piece(position).possibleMoves();
+    }
     public ChessPiece performChessMove(ChessPosition sourcePosition, ChessPosition targetPosition){
         Position source = sourcePosition.toPosition();
         Position target = targetPosition.toPosition();
